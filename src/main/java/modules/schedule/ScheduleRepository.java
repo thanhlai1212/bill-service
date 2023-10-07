@@ -1,7 +1,5 @@
 package modules.schedule;
 
-import modules.account.Account;
-
 import java.util.ArrayList;
 import java.util.List;
 

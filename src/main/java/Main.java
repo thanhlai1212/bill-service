@@ -3,10 +3,8 @@ import modules.account.AccountService;
 import modules.bill.Bill;
 import modules.bill.BillProvider;
 import modules.bill.BillService;
-import modules.payment.Payment;
 import modules.payment.PaymentService;
 import modules.payment.PaymentState;
-import modules.schedule.Schedule;
 import modules.schedule.ScheduleService;
 
 import java.time.LocalDate;
@@ -46,9 +44,11 @@ public class Main {
   }
 
   public static void listBill(List<Bill> bills) {
-    System.out.println(String.format("%-10s%-10s%-10s%-15s%-10s%-10s", "Bill No.", "Type", "Amount", "Due Date", "State", "Provider"));
+    System.out.println(
+      String.format("%-10s%-10s%-10s%-15s%-10s%-10s", "Bill No.", "Type", "Amount", "Due Date", "State", "Provider"));
     for (Bill b : bills) {
-      System.out.println(String.format("%-10s%-10s%-10s%-15s%-10s%-10s", b.getId(), b.getType(), b.getAmount(), b.getDueDate(), b.getState(), b.getProvider()));
+      System.out.println(String.format("%-10s%-10s%-10s%-15s%-10s%-10s",
+        b.getId(), b.getType(), b.getAmount(), b.getDueDate(), b.getState(), b.getProvider()));
     }
   }
 

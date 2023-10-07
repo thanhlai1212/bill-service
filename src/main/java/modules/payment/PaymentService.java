@@ -1,7 +1,5 @@
 package modules.payment;
 
-import modules.bill.Bill;
-
 import java.time.LocalDate;
 import java.util.List;
 
