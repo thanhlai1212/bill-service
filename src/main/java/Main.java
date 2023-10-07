@@ -19,22 +19,27 @@ public class Main {
 
   public static void main(String[] args) {
 
-    if (args[0].equals("CASH_IN")) {
-      cashIn(Long.valueOf(args[1]));
-    } else if (args[0].equals("LIST_BILL")) {
-      listBill(billService.getBills());
-    } else if (args[0].equals("PAY")) {
-      pay(args);
-    } else if (args[0].equals("DUE_DATE")) {
-      listBill(billService.getBillsByDueDate());
-    } else if (args[0].equals("SCHEDULE")) {
-      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-      LocalDate date = LocalDate.parse(args[2], formatter);
-      schedule(Long.valueOf(args[1]), date);
-    } else if (args[0].equals("LIST_PAYMENT")) {
-      listPayment();
-    } else if (args[0].equals("SEARCH_BILL_BY_PROVIDER")) {
-      searchBillByProvider(BillProvider.valueOf(args[1]));
+    while (true) {
+      if (args[0].equals("CASH_IN")) {
+        cashIn(Long.valueOf(args[1]));
+      } else if (args[0].equals("LIST_BILL")) {
+        listBill(billService.getBills());
+      } else if (args[0].equals("PAY")) {
+        pay(args);
+      } else if (args[0].equals("DUE_DATE")) {
+        listBill(billService.getBillsByDueDate());
+      } else if (args[0].equals("SCHEDULE")) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate date = LocalDate.parse(args[2], formatter);
+        schedule(Long.valueOf(args[1]), date);
+      } else if (args[0].equals("LIST_PAYMENT")) {
+        listPayment();
+      } else if (args[0].equals("SEARCH_BILL_BY_PROVIDER")) {
+        searchBillByProvider(BillProvider.valueOf(args[1]));
+      } else if (args[0].equals("EXIT")) {
+        System.out.println("Good bye!");
+        return;
+      }
     }
   }
 
