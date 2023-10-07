@@ -19,7 +19,6 @@ public class Main {
 
   public static void main(String[] args) {
 
-    while (true) {
       if (args[0].equals("CASH_IN")) {
         cashIn(Long.valueOf(args[1]));
       } else if (args[0].equals("LIST_BILL")) {
@@ -38,9 +37,7 @@ public class Main {
         searchBillByProvider(BillProvider.valueOf(args[1]));
       } else if (args[0].equals("EXIT")) {
         System.out.println("Good bye!");
-        return;
       }
-    }
   }
 
   public static void cashIn(Long amount) {
