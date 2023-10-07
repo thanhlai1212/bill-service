@@ -35,7 +35,8 @@ public class BillService {
   public Bill updateBill(Bill bill) {
     Bill curentBill = billRepository.getBills().stream().filter(b -> b.getId().equals(bill.getId())).findFirst().get();
     int currentIndex = billRepository.getBills().indexOf(curentBill);
-    return billRepository.getBills().set(currentIndex, bill);
+    billRepository.getBills().set(currentIndex, bill);
+    return bill;
   }
 
   public Bill deleteBill(Long id) {

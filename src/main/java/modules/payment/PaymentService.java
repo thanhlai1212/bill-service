@@ -11,10 +11,6 @@ public class PaymentService {
     return paymentRepository.getPayments();
   }
 
-  public Payment getPayment(Long id) {
-    return paymentRepository.getPayments().stream().filter(b -> b.getId().equals(id)).findFirst().get();
-  }
-
   public Payment addPayment(Long amount, LocalDate payDate, PaymentState state, Long billId) {
     Payment payment = new Payment(id, amount, payDate, state, billId);
     id++;
